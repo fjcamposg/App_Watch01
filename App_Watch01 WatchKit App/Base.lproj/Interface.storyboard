@@ -1,15 +1,78 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc">
+                    <items>
+                        <button width="1" alignment="left" title="Button" id="mbG-6s-qIx">
+                            <connections>
+                                <segue destination="a2m-hV-4HX" kind="push" id="hJL-w7-Bwu"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="-259" y="39"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="Tlc-sm-0a9">
+            <objects>
+                <controller id="a2m-hV-4HX">
+                    <items>
+                        <button width="1" alignment="left" title="Button" id="prW-oW-6q2">
+                            <connections>
+                                <segue destination="ALj-qs-fgl" kind="push" id="ZaD-BC-c4V"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="13" y="39"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="Cma-Ty-2i3">
+            <objects>
+                <controller id="ALj-qs-fgl" customClass="InterfaceController" customModule="App_Watch01_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Button" id="3c7-CD-qQp">
+                            <connections>
+                                <action selector="miButtonAction" destination="ALj-qs-fgl" id="aWM-Aw-B9g"/>
+                            </connections>
+                        </button>
+                        <switch width="1" alignment="left" value="YES" title="Switch" id="y92-Se-tco">
+                            <connections>
+                                <action selector="miSwitchAction:" destination="ALj-qs-fgl" id="404-ko-JN4"/>
+                            </connections>
+                        </switch>
+                        <slider width="1" alignment="left" value="1" maximum="10" steps="10" id="RzR-9z-ICF">
+                            <connections>
+                                <action selector="miSliderAction:" destination="ALj-qs-fgl" id="QMh-xY-3S7"/>
+                            </connections>
+                        </slider>
+                        <label width="136" height="74" alignment="left" text="Hola!!" textAlignment="center" numberOfLines="0" id="Vbp-39-jHU">
+                            <fontDescription key="font" type="system" pointSize="41"/>
+                        </label>
+                        <table alignment="left" id="6g8-zZ-4CA"/>
+                    </items>
+                    <connections>
+                        <outlet property="miBoton" destination="3c7-CD-qQp" id="YXu-2j-fMT"/>
+                        <outlet property="miLabel" destination="Vbp-39-jHU" id="3zD-Tb-HOd"/>
+                        <outlet property="miSlider" destination="RzR-9z-ICF" id="cO0-hw-Xyh"/>
+                        <outlet property="miSwitch" destination="y92-Se-tco" id="JZS-qb-kuI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="285" y="43.5"/>
         </scene>
     </scenes>
 </document>
